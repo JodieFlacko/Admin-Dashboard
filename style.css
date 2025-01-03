@@ -448,13 +448,15 @@ summary {
   .header {
     grid-area: header;
     padding: 22px 38px;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
     border: solid 2px black;
     border-collapse: collapse;
   }
 
   .header-top{
     display: grid;
-    grid-template-columns: 5fr 1fr;
+    grid-template-columns: 4fr 1fr;
   }
   .header-top-start, .header-top-end{
     border: solid 2px black;
@@ -462,10 +464,12 @@ summary {
     display: flex;
     align-items: center;
   }
+
   .header-top-end{
-
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    place-items: center;
   }
-
   input#search{
     width: 70%;
     height: 32px;
@@ -486,19 +490,24 @@ summary {
   button.user{
     border-radius: 50%;
     overflow: hidden;
-    width: 52px;
-    height: 52px;
+    width: 46px;
+    height: 46px;
     padding: 0;
     display: grid;
     place-content: center;
+    border: none;
   }
 
   span.user-area{
     display: inline-block;
     display: grid;
     place-content: center;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .user-name h4{
+    font-size: clamp(0.5rem, 0.5rem + 0.5vw, 1.5rem);
   }
 
   .main-content{
