@@ -372,7 +372,7 @@ summary {
 
   .container{
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1.3fr 5fr;
     grid-template-rows: 1fr 5fr;
     grid-template-areas: 
     "sidebar header"
@@ -599,4 +599,44 @@ summary {
 
   .main-content{
     grid-area: main;
+    display: grid;
+    grid-template-columns: 3fr 1.2fr;
+    column-gap: 24px;
+    grid-template-areas: 
+    "projects main-content-side"
+    "projects main-content-side"
+    ;
+  }
+
+  .projects-container, .main-content-side, .announcements, .trending, .card {
+    border: solid 2px black;
+    border-collapse: collapse;
+  }
+
+  .projects-container{
+    grid-area: projects;
+    padding-left: 16px;
+    padding-top: 26px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(300px + 3vw), 1fr));
+    gap: 32px;
+    align-content: start;
+  }
+
+  .projects-container > div.projects-container-tag{
+    font-size: 70%;
+    font-weight: 600;
+    grid-column: 1 / -1;
+    height: fit-content;
+    margin-bottom: -32px;
+  }
+
+  .card{
+    display: inline-block;
+    width: 100%;
+    height: clamp(150px, calc(150px + 5vh), 20vh);
+  }
+
+  .main-content-side{
+    grid-area: main-content-side;
   }
