@@ -347,11 +347,124 @@ summary {
 
   /* My style */
 
+  body, html, .container {
+    height: 100%;
+    font-size: clamp(1rem, 0.75rem + 0.5vw, 2rem);
+  }
 
   body{
     font-family: "airbnbcereal_w_bkregular", Arial, Helvetica, sans-serif;
   }
 
+  ul, li{
+    margin: 0;
+    padding: 0;
+  }
+
+  .container{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: 
+    "sidebar header"
+    "sidebar main"
+    ;
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+    display: grid;
+    grid-template-rows: 1fr 3fr 6fr;
+    gap: 30px;
+    border: solid 2px black;
+    border-collapse: collapse;
+  }
+
   h3 {
     font-family: "airbnbcereal_w_bluploadedfile", Arial, Helvetica, sans-serif;
+    display: grid;
+    align-items: start;
+    margin: 0;
+    padding: 0;
   }
+
+  .sidebar svg{
+    grid-column: 1 / 2;
+  }
+
+  h3 span{
+    position: relative;
+    font-size: 100%;
+    grid-column: 2 / -1;
+  }
+
+  #dashboard{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    padding: 12px;
+    border: solid 2px black;
+    border-collapse: collapse;
+  }
+
+  .sidebar-top, .sidebar-bottom{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    align-content: start;
+    align-items: center;
+    row-gap: 12px;
+    column-gap: 8px;
+    padding: 12px;
+    border: solid 2px black;
+    border-collapse: collapse;
+  }
+
+  .sidebar-top{
+    grid-template-rows: repeat(6, auto);
+  }
+
+  .sidebar-bottom{
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .sidebar li{
+    grid-column: 2 / 3;
+  }
+
+  .sidebar-bottom svg, .sidebar-top svg {
+    grid-column: 1 / 2;
+    justify-self: center;
+  }
+
+  .header {
+    grid-area: header;
+    border: solid 2px black;
+    border-collapse: collapse;
+  }
+
+  .main-content{
+    grid-area: main;
+    border: solid 2px black;
+    border-collapse: collapse;
+  }
+
+  button.search{
+    display: inline-block;
+    padding: 2px;
+    background-color: rgb(0, 0, 0, 0);
+    border: transparent;
+  }
+
+  button.search:hover{
+    cursor: pointer;
+  }
+
+  ul{
+    list-style: none;
+  }
+  
+  li{
+    font-size: clamp(0.5rem, 0.5rem + 0.5vw, 1.5rem);
+    font-weight: 600;
+  }
+
