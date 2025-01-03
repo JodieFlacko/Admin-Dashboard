@@ -361,6 +361,15 @@ summary {
     padding: 0;
   }
 
+  ul{
+    list-style: none;
+  }
+  
+  li{
+    font-size: clamp(0.5rem, 0.5rem + 0.5vw, 1.5rem);
+    font-weight: 600;
+  }
+
   .container{
     display: grid;
     grid-template-columns: 1fr 5fr;
@@ -438,33 +447,60 @@ summary {
 
   .header {
     grid-area: header;
+    padding: 22px 38px;
     border: solid 2px black;
     border-collapse: collapse;
   }
 
-  .main-content{
-    grid-area: main;
+  .header-top{
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+  }
+  .header-top-start, .header-top-end{
     border: solid 2px black;
     border-collapse: collapse;
+    display: flex;
+    align-items: center;
+  }
+  .header-top-end{
+
   }
 
-  button.search{
+  input#search{
+    width: 70%;
+    height: 32px;
+    background-color: rgb(128, 128, 128, 0.3);
+    border: none;
+    border-radius: 16px;
+    margin-left: 12px;
+  }
+
+  button.search, button.notifications{
     display: inline-block;
     padding: 2px;
     background-color: rgb(0, 0, 0, 0);
     border: transparent;
-  }
-
-  button.search:hover{
     cursor: pointer;
   }
 
-  ul{
-    list-style: none;
-  }
-  
-  li{
-    font-size: clamp(0.5rem, 0.5rem + 0.5vw, 1.5rem);
-    font-weight: 600;
+  button.user{
+    border-radius: 50%;
+    overflow: hidden;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    display: grid;
+    place-content: center;
   }
 
+  span.user-area{
+    display: inline-block;
+    display: grid;
+    place-content: center;
+    width: 80px;
+    height: 80px;
+  }
+
+  .main-content{
+    grid-area: main;
+  }
