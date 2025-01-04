@@ -637,6 +637,29 @@ summary {
     display: inline-block;
     width: 100%;
     height: clamp(150px, calc(150px + 5vh), 20vh);
+    padding-left: 28px;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 26px;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+  }
+  
+  .card-title{
+    font-size: 68%;
+    font-weight: 600;
+  }
+
+  .card-content{
+    font-size: 75%;
+    font-weight: 100;
+  }
+
+  .card-icons{
+    justify-self: end;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
   }
 
   .main-content-side{
