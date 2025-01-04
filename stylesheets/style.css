@@ -235,9 +235,10 @@
   span.user-area{
     display: inline-block;
     display: grid;
+    position: relative;
     place-content: center;
-    width: 90px;
-    height: 90px;
+    width: 130px;
+    height: 130px;
   }
 
   .user-name h4{
@@ -273,12 +274,29 @@
     height: 80px;
   }
 
+  .header-top-end.user-area{
+    position: relative;
+  }
+
+  .header-top-end .user-area img{
+    position: absolute;
+    top: 4px;
+    background-color: var(--light-green);
+  }
+
   span.user-image{
     display: inline-block;
     display: grid;
     place-content: center;
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
+    background-color: var(--light-green);
+    position: relative;
+  }
+
+  .user-image img{
+    position: absolute;
+    top: 7px;
   }
 
   div.small-text{
@@ -369,6 +387,12 @@
     font-size: 75%;
     font-weight: 100;
     opacity: 0.8;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-wrap: balance;
   }
 
   .card-icons{
